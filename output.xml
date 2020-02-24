@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="true" generated="20200224 14:57:57.948" generator="Robot 3.1.2 (Python 2.7.17 on linux2)">
+<robot rpa="true" generated="20200224 15:03:46.189" generator="Robot 3.1.2 (Python 2.7.17 on linux2)">
 <suite source="/home/jonttu/kurssit/ohtuprojekti/News_Analysis/tasks/GNS.robot" id="s1" name="GNS">
 <test id="s1-t1" name="Guardian">
 <kw name="Open Browser" library="SeleniumLibrary">
@@ -8,8 +8,8 @@
 <arg>url=${GUARDIAN}</arg>
 <arg>browser=${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200224 14:57:58.109" level="INFO">Opening browser 'Chrome' to base url 'https://www.theguardian.com/international'.</msg>
-<status status="PASS" endtime="20200224 14:58:03.911" starttime="20200224 14:57:58.109"></status>
+<msg timestamp="20200224 15:03:46.301" level="INFO">Opening browser 'Chrome' to base url 'https://www.theguardian.com/international'.</msg>
+<status status="PASS" endtime="20200224 15:03:52.367" starttime="20200224 15:03:46.300"></status>
 </kw>
 <kw name="Get Element Attribute" library="SeleniumLibrary">
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
@@ -20,21 +20,29 @@
 <assign>
 <var>${TOP1LINK}</var>
 </assign>
-<msg timestamp="20200224 14:58:03.969" level="INFO">${TOP1LINK} = https://www.theguardian.com/world/live/2020/feb/24/coronavirus-live-updates-china-wuhan-hubei-latest-news-italy-lombardy-south-korea-iran-japan-cases-infections-death-toll-outbreak-xi-jinping-update</msg>
-<status status="PASS" endtime="20200224 14:58:03.969" starttime="20200224 14:58:03.912"></status>
+<msg timestamp="20200224 15:03:52.406" level="INFO">${TOP1LINK} = https://www.theguardian.com/world/live/2020/feb/24/coronavirus-live-updates-china-wuhan-hubei-latest-news-italy-lombardy-south-korea-iran-japan-cases-infections-death-toll-outbreak-xi-jinping-update</msg>
+<status status="PASS" endtime="20200224 15:03:52.406" starttime="20200224 15:03:52.367"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${TOP1LINK}</arg>
 </arguments>
-<msg timestamp="20200224 14:58:03.975" level="INFO">https://www.theguardian.com/world/live/2020/feb/24/coronavirus-live-updates-china-wuhan-hubei-latest-news-italy-lombardy-south-korea-iran-japan-cases-infections-death-toll-outbreak-xi-jinping-update</msg>
-<status status="PASS" endtime="20200224 14:58:03.976" starttime="20200224 14:58:03.972"></status>
+<msg timestamp="20200224 15:03:52.406" level="INFO">https://www.theguardian.com/world/live/2020/feb/24/coronavirus-live-updates-china-wuhan-hubei-latest-news-italy-lombardy-south-korea-iran-japan-cases-infections-death-toll-outbreak-xi-jinping-update</msg>
+<status status="PASS" endtime="20200224 15:03:52.406" starttime="20200224 15:03:52.406"></status>
 </kw>
-<status status="PASS" endtime="20200224 14:58:03.977" critical="yes" starttime="20200224 14:57:58.108"></status>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>url=${TOP1LINK}</arg>
+</arguments>
+<msg timestamp="20200224 15:03:52.407" level="INFO">Opening url 'https://www.theguardian.com/world/live/2020/feb/24/coronavirus-live-updates-china-wuhan-hubei-latest-news-italy-lombardy-south-korea-iran-japan-cases-infections-death-toll-outbreak-xi-jinping-update'</msg>
+<status status="PASS" endtime="20200224 15:03:55.813" starttime="20200224 15:03:52.406"></status>
+</kw>
+<status status="PASS" endtime="20200224 15:03:55.814" critical="yes" starttime="20200224 15:03:46.300"></status>
 </test>
 <doc>Global News Sentiment Analysis</doc>
-<status status="PASS" endtime="20200224 14:58:03.990" starttime="20200224 14:57:57.951"></status>
+<status status="PASS" endtime="20200224 15:03:55.820" starttime="20200224 15:03:46.191"></status>
 </suite>
 <statistics>
 <total>

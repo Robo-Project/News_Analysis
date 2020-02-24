@@ -1,17 +1,25 @@
 *** Settings ***
 Documentation    Global News Sentiment Analysis
-Library          SeleniumLibrary
+Library          SeleniumLibrary        
+Library          Collections
+Test Setup      Open Browser           url=${GUARDIAN}    browser=${BROWSER}
+Test Teardown   Close Browser
 
 *** Tasks ***
-Guardian
-    Open Browser           url=${GUARDIAN}    browser=${BROWSER}
-    ${TOP1LINK}           Get Element Attribute           ${TOP1XPATH}      attribute=href
-    Log                    ${TOP1LINK}
-  
+
+Get Top 5 Links
+    ${LINKS}        Create List
+    FOR    ${index}    IN RANGE    1    5
+        ${TOPLINK}            Get Element Attribute           //*[@id="tabs-popular-1"]/ul/li[${index}]/a      attribute=href
+        Append To List         ${LINKS}     ${TOPLINK}
+    END
+    Log     ${LINKS}
+
+
 *** Variables ***
 ${BROWSER}      Chrome
 ${DELAY}        0
 ${GUARDIAN}     https://www.theguardian.com/international
-${TOP1XPATH}    //*[@id="tabs-popular-1"]/ul/li[1]/a
-${TOP1LINK}
+${TOPLINK}
 ${CONTENT}
+${index}        0
