@@ -2,7 +2,6 @@
 Documentation    Global News Sentiment Analysis
 Library          SeleniumLibrary
 Library          Collections
-LIbrary          BuiltIn
 Test Setup      Open Browser           url=${GUARDIAN}    browser=${BROWSER}
 Test Teardown   Close Browser
 
@@ -10,16 +9,17 @@ Test Teardown   Close Browser
 
 Get Top 5 Links
     @{LINKS}        Create List
-       FOR    ${index}    IN RANGE    1    5
+       FOR    ${index}    IN RANGE    1    6
            ${TOPLINK}            Get Element Attribute           //*[@id="tabs-popular-1"]/ul/li[${index}]/a      attribute=href
            Append To List         ${LINKS}     ${TOPLINK}
        END
        Set Suite Variable  ${LINKS}
        Log             ${LINKS}
 
+
 Get texts from links
     @{TEXTS}        Create List
-           FOR    ${index}    IN RANGE    0    4
+           FOR    ${index}    IN RANGE    0    5
                 Go to           ${LINKS}[${index}]
                 ${CONTENT}  Get text  class:content__main
                 Append To List  ${TEXTS}     ${CONTENT}
