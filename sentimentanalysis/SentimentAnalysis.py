@@ -40,18 +40,3 @@ class SentimentAnalysis:
 
         return results
 
-
-# ## This is a test run
-#
-# list = ["very good",
-#         "i am very happy person and i love living",
-#         "i want to commit suicide. I am not happy with my life",
-#         "every little thing is gonna be okay",
-#         "i am very sad person sad sad sad sad sad"]
-#
-# print(list)
-# test = TestClass()
-# result = test.analyzelist(list)
-# print("averageScore = ", result[0])
-# print("averageMagnitude = ", result[1])
-#
